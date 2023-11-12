@@ -21,8 +21,6 @@ app.use((req, res) => {
         return;
     }
 
-    console.log(targetUrl);
-
     // Adjust the URL for CORS Anywhere
     req.url = targetUrl.startsWith('/') ? targetUrl : `/${targetUrl}`;
     proxy.emit('request', req, res);
